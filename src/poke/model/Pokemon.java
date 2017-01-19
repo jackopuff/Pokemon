@@ -1,20 +1,24 @@
 package poke.model;
+import java.awt.Color;
 
 public abstract class Pokemon
 {
 	private String name;
-	private int healthPoints;
+	private int HP;
 	private int index;
 	private int speed;
 	private int attackPoints;
+	private String Nick;
+	private Color BGColor;
 	
-	public Pokemon()
+	public Pokemon(String name, String NickName)
 	{
 		this.name = "No Pokemon";
-		this.healthPoints = 0;
+		this.HP = 0;
 		this.index=0;
 		this.speed = 0;
 		this.attackPoints = 0;
+		this.Nick = NickName;
 	}
 	public String getPokemonTypes()
 	{
@@ -34,13 +38,22 @@ public abstract class Pokemon
 		}
 		return pokemonTypes;
 	}
+	public String getNick()
+	{
+		return Nick;
+	}
+	public void setNick(String Nick)
+	{
+		this.Nick= Nick;
+	}
 	public String getName()
 	{
 		return name;
 	}
 	public String toString()
 	{
-		String description = "This pokemon is";
+		String description = "This pokemon is" + this.name + ", ID is" + this.index + ", HP is " + HP +
+				", Speed is " + this.speed + ", and his nickname is " + this.Nick;
 		
 		return description;
 	}
@@ -50,9 +63,9 @@ public abstract class Pokemon
 		
 		return pokemonInfo;
 	}
-	public int getHealthPoints()
+	public int getHP()
 	{
-		return healthPoints;
+		return HP;
 	}
 	public int getIndex()
 	{
@@ -82,8 +95,16 @@ public abstract class Pokemon
 	{
 		this.name = name;
 	}
-	public void setHealthPoints(int healthPoints)
+	public void setHP(int HP)
 	{
-		this.healthPoints = healthPoints;
+		this.HP = HP;
+	}
+	public Color getBGColor()
+	{
+		return BGColor;
+	}
+	public void setBGColor(Color BGColor)
+	{
+		this.BGColor = BGColor;
 	}
 }
