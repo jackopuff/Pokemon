@@ -16,17 +16,12 @@ public class magmar extends Pokemon implements Fire
 			super.setSpeed(60);
 			super.setBGColor(Color.RED);
 		}
-		@Override
-		public String getAttackString()
-		{
-			return super.getAttackString();
-		}
-		@Override
+
 		public int blaze()
 		{
 			return 70;
 		}
-		@Override int fire()
+		public int fire()
 		{
 			return 55;
 		}

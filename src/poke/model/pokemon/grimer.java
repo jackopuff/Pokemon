@@ -14,17 +14,11 @@ public class grimer extends Pokemon implements Poison
 		super.setSpeed(20);
 		super.setBGColor(Color.MAGENTA);
 	}
-	@Override
-	public String getAttackString()
-	{
-		return super.getAttackString();
-	}
-	@Override
 	public int sting()
 	{
 		return 40;
 	}
-	@Override int gas()
+	public int gas()
 	{
 		return 50;
 	}

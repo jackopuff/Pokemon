@@ -6,7 +6,7 @@ public abstract class Pokemon
 	private String name;
 	private int HP;
 	private int index;
-	private int speed;
+	private double speed;
 	private int attackPoints;
 	private String Nick;
 	private Color BGColor;
@@ -75,11 +75,11 @@ public abstract class Pokemon
 	{
 		this.index = index;
 	}
-	public int getSpeed()
+	public double getSpeed()
 	{
 		return speed;
 	}
-	public void setSpeed(int speed)
+	public void setSpeed(double speed)
 	{
 		this.speed = speed;
 	}

@@ -1,7 +1,8 @@
 package poke.controller;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JOPtionPane;
+import javax.swing.JOptionPane;
+
 import poke.view.*;
 import poke.model.Pokemon;
 import poke.model.pokemon.mrMime;
@@ -11,8 +12,7 @@ import poke.model.pokemon.magmar;
 import poke.model.pokemon.grimer;
 public class PokeController
 {
-	public PokeController()
-	{
+
 		private PokeFrame pokeFrame;
 		private ArrayList<Pokemon> pokedex;
 		
@@ -22,10 +22,9 @@ public class PokeController
 			this.buildPokedex();
 			pokeFrame = new PokeFrame(this);
 		}
-	}
 	public void start()
 	{
-		JOptionPane.showMessageDialog(pokemonFrame,"Welcome", "Pokemon", JOptionPane.OK_OPTION, new ImageIcon(getClass().getResource("/poke/view/images/Pokeball.png")));
+		JOptionPane.showMessageDialog(pokeFrame,"Welcome", "Pokemon", JOptionPane.OK_OPTION, new ImageIcon(getClass().getResource("/poke/view/images/Pokeball.png")));
 	}
 	public void buildPokedex()
 	{
@@ -46,12 +45,12 @@ public class PokeController
 		}
 		return PokeNames;
 	}
-	public void updatePokemon(int i, String name, int HP, int AP, int speed)
+	public void updatePokemon(int i, String name, int HP, int AP, double speed)
 	{
-		Pokemon pokemon = pokedex.get(i);
+		Pokemon pokemon=pokedex.get(i);
 		pokemon.setName(name);
 		pokemon.setSpeed(speed);
-		pokemon.setHealthPoints(HP);
+		pokemon.setHP(HP);
 		pokemon.setAttackPoints(AP);
 		
 	}

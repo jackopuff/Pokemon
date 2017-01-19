@@ -16,21 +16,13 @@ public class mrMime extends Pokemon implements Psychic
 		super.setSpeed(80);
 		super.setBGColor(Color.PINK);
 	}
-	@Override
-	public String getAttackString()
-	{
-		return super.getAttackString();
-	}
-	@Override
-	public int blaze()
+	public int Confusion()
 	{
 		return 70;
 	}
-	@Override int fire()
+	public int PsyBeam()
 	{
 		return 55;
 	}
 }
 
-
-}

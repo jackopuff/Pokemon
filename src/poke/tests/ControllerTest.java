@@ -1,23 +1,24 @@
 package poke.tests;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import poke.controller.PokemonController;
+import poke.controller.PokeController;
 import poke.model.Pokemon;
-import poke.view.PokemonFrame;
+import poke.view.PokeFrame;
 
 public class ControllerTest
 {
-	private PokemonController testedController;
+	private PokeController testedController;
 	
 	@Before
 	public void setUp() throws Exception
 	{
-		testedController = new PokemonController();
+		testedController = new PokeController();
 	}
 
 	@After
@@ -37,7 +38,7 @@ public class ControllerTest
 	{
 		assertTrue("Pokedex has something in it", testedController.getPokedex().size() > 0);
 		assertFalse("Pokemon need real names", testedController.getPokedex().get(0).getName().equals(""));
-		testedController.updateSelected(0, "JUnit", 0, 0, .0);
+		testedController.updatePokemon(0, "JUnit", 0, 0, .0);
 		assertTrue("Update method failed", testedController.getPokedex().get(0).getName().equals("JUnit"));
 	}
 
@@ -54,7 +55,7 @@ public class ControllerTest
 	public void testGetBaseFrame()
 	{
 		assertNotNull("You need an instance of PokemonFrame", testedController.getBaseFrame());
-		assertTrue("Your baseFrame needs to be of type PokemonFrame", testedController.getBaseFrame() instanceof PokemonFrame);
+		assertTrue("Your baseFrame needs to be of type PokemonFrame", testedController.getBaseFrame() instanceof PokeFrame);
 	}
 
 	@Test
